@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор валових викидів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Калькулятор валових викидів</h1>
+    <p>Розрахунок валових викидів шкідливих речовин у вигляді суспендованих твердих частинок при спалюванні різних видів палива</p>
+    
+    <div class="container">
+        <div class="fuel-section">
+            <h2>Параметри палива</h2>
+            <div class="input-group">
+                <label for="coal-amount">Кількість вугілля (т):</label>
+                <input type="number" id="coal-amount" value="1096363" min="0">
+            </div>
+            
+            <div class="input-group">
+                <label for="mazut-amount">Кількість мазуту (т):</label>
+                <input type="number" id="mazut-amount" value="70945" min="0">
+            </div>
+            
+            <div class="input-group">
+                <label for="gas-amount">Кількість природного газу (тис. м³):</label>
+                <input type="number" id="gas-amount" value="84762" min="0">
+            </div>
+        </div>
+        
+        <button id="calculate-btn">Розрахувати</button>
+        
+        <div class="results" id="results">
+            <h2>Результати розрахунків</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Тип палива</th>
+                        <th>Показник емісії (г/ГДж)</th>
+                        <th>Валовий викид (т)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Вугілля</td>
+                        <td id="coal-emission-factor">-</td>
+                        <td id="coal-gross-emission">-</td>
+                    </tr>
+                    <tr>
+                        <td>Мазут</td>
+                        <td id="mazut-emission-factor">-</td>
+                        <td id="mazut-gross-emission">-</td>
+                    </tr>
+                    <tr>
+                        <td>Природний газ</td>
+                        <td id="gas-emission-factor">-</td>
+                        <td id="gas-gross-emission">-</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Загальні викиди</strong></td>
+                        <td>-</td>
+                        <td id="total-gross-emission"><strong>-</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
